@@ -4,6 +4,12 @@ import ServerlessHttp from "serverless-http";
 
 const server = express();
 
+const cors = require("cors");
+
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
+
 server.get("/", (req, res) => {
   res.send(200);
 });

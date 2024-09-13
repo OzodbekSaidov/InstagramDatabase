@@ -10,7 +10,7 @@ const UserGenerate = async () => {
     const userfilepath = path.join(__dirname, "users.json");
     const data = [];
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
         const user = {
             nickName : faker.person.fullName(), 
             uuid: faker.string.uuid(),

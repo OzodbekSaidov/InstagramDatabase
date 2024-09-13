@@ -21,6 +21,8 @@ const UserGenerate = async () => {
             posts: {
                 Image: faker.image.url(),
                 description: faker.lorem.sentence(),
+                likes: faker.number.int(1000),
+                views: faker.number.int(1000000),
                 date: faker.date.past(5),
                 Comment: faker.lorem.sentence(10),
             }

@@ -1,7 +1,8 @@
 [build]
-    functions="functions"
+  publish = "public" # Point this to your public folder
+  functions = "functions"
 
 [[redirects]]
-  to = "./.netlify/functions/server/:splat"
-  from="/*"
-  status=200
+  from = "/*"
+  to = "/.netlify/functions/server/:splat"
+  status = 200

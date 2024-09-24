@@ -1,10 +1,20 @@
 import Users from "../db/Routes/Users.mjs"
 import express from "express";
 import ServerlessHttp from "serverless-http";
+import path from 'path';
 
 const server = express();
 
 const cors = require("cors");
+
+server.use(express.static(path.join(__dirname, '../../public'))); // Adjust the path
+
+// Serve index.html explicitly if needed
+server.get("/", (req, res) => {
+  const filePath = path.join(__dirname, '../../public/index.html');
+  res.sendFile(filePath);
+});
+
 
 server.use(cors({
   origin: 'http://localhost:3000',
@@ -13,7 +23,7 @@ server.use(cors({
 }));
 
 server.get("/", (req, res) => {
-  res.send(200);
+  res.render(index.html);
 });
 
 server.use("/users", Users);
